@@ -30,7 +30,7 @@ color gruvbox
 set background=dark
 
 " Settings
-set relativenumber autoindent wildmenu ignorecase
+set relativenumber autoindent wildmenu ignorecase number
 set updatetime=250
 set path+=.,/home/utter/flowfront/
 set suffixesadd+=.js
