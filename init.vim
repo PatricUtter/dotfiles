@@ -22,6 +22,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-surround'
 Plug 'tmsvg/pear-tree'
+Plug 'stsewd/fzf-checkout.vim'
 
 call plug#end()
 
@@ -58,6 +59,10 @@ set tags+=tags
 
 " set hidden
 set hidden
+
+"Highlight colors
+hi Search ctermfg=DarkGrey 
+hi Search ctermbg=White 
 
 " Limelight
 " Color name (:help cterm-colors) or ANSI code
