@@ -60,6 +60,9 @@ set tags+=tags
 " set hidden
 set hidden
 
+" Enable mouse
+set mouse=a
+
 "Highlight colors
 hi Search ctermfg=DarkGrey 
 hi Search ctermbg=White 
