@@ -1,8 +1,11 @@
+vim.o.termguicolors = true
+vim.o.background = 'dark'
+vim.cmd([[colorscheme gruvbox]])
+
 vim.o.hidden = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.mouse = 'a'
-vim.o.termguicolors = true
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')

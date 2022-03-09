@@ -1,25 +1,25 @@
 vim.g.mapleader = ' '
 
-local function map (from, to, mode) 
-    local opts = {noremap = true, silent = true}
-    mode = mode or 'n'
-    vim.api.nvim_set_keymap(mode, from, to, opts)
-end
+vim.keymap.set('i', 'kj', '<Esc>')
+vim.keymap.set('i','jk', '<Esc>')
 
--- Try to live without this
--- map('ii', '<Esc>', 'i')
-map('kj', '<Esc>', 'i')
-map('jk', '<Esc>', 'i')
+vim.keymap.set('x', '<leader>p', '"+p' )
 
-map('<C-h>', '<C-w>h')
-map('<C-j>', '<C-w>j')
-map('<C-k>', '<C-w>k')
-map('<C-l>', '<C-w>l')
-
-map('<leader>p', '"+p', 'x')
-map('<leader>p', '"+p', 'n')
-map('<leader>y', '"+y', 'x')
+vim.keymap.set('n', '<leader>p', '"+p' )
+vim.keymap.set('x','<leader>y', '"+y')
 
 --fancy block mover
-map('K', ":move \'<-2<CR>gv-gv", 'v')
-map('J', ":move \'>+1<CR>gv-gv", 'v')
+vim.keymap.set('v', 'K', ":move \'<-2<CR>gv-gv")
+vim.keymap.set('v', 'J', ":move \'>+1<CR>gv-gv")
+
+-- Navigator keybindings
+vim.keymap.set('n', "<C-h>", require('Navigator').left)
+vim.keymap.set('n', "<C-k>", require('Navigator').up)
+vim.keymap.set('n', "<C-l>", require('Navigator').right)
+vim.keymap.set('n', "<C-j>", require('Navigator').down)
+
+-- Telescope keybindings
+vim.keymap.set('n', "<C-p>", require('telescope.builtin').find_files)
+vim.keymap.set('n', "<leader>F", require('telescope.builtin').live_grep)
+vim.keymap.set('n', "<leader>b", require('telescope.builtin').buffers)
+vim.keymap.set('n', "<leader>h", require('telescope.builtin').help_tags)
