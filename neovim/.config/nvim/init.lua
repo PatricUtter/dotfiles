@@ -1,4 +1,5 @@
 require("plugins")
+require("language-servers")
 require("setups")
 require("settings")
 require("keymappings")
