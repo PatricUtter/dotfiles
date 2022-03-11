@@ -26,3 +26,7 @@ vim.keymap.set("n", "<leader>h", require("telescope.builtin").help_tags)
 
 -- Formatting
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+
+-- Nvim-tree
+vim.keymap.set("n", "<leader><Tab>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader><leader><Tab>", "<cmd>NvimTreeFindFile<CR>")
