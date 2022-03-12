@@ -20,6 +20,27 @@ require("telescope").setup({
 })
 require("telescope").load_extension("fzf")
 
+-- luasnip
+
+local ls = require("luasnip")
+
+ls.config.set_config({
+	history = true,
+	updateevents = "TextChanged,TextChangedI",
+})
+
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end, { noremap = true, silent = true })
+
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, { noremap = true, silent = true })
+
 -- nvim-cmp
 local cmp = require("cmp")
 
@@ -217,4 +238,34 @@ require("nvim-tree").setup({
 			git = false,
 		},
 	},
+})
+
+-- Lualine
+require("lualine").setup({
+	options = {
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {},
+		always_divide_middle = true,
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	extensions = {},
 })

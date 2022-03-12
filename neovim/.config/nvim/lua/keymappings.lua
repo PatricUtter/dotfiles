@@ -30,3 +30,6 @@ vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 -- Nvim-tree
 vim.keymap.set("n", "<leader><Tab>", "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader><leader><Tab>", "<cmd>NvimTreeFindFile<CR>")
+
+-- Hop
+vim.keymap.set("n", "s", require("hop").hint_char2)
