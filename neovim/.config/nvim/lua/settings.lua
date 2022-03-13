@@ -1,6 +1,5 @@
 vim.o.termguicolors = true
 vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox-material]])
 vim.o.hidden = true
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -25,6 +24,11 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+-- Colorscheme etc
+--vim.cmd([[colorscheme gruvbox-material]])
+vim.g.tokyonight_style = "night"
+vim.cmd([[colorscheme tokyonight]])
 
 -- Color adjustments, these need to run after other color settings have run
 vim.cmd([[hi SignColumn guibg=235]])

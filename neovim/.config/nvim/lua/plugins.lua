@@ -4,7 +4,7 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
-
+-- TODO: do some stuff
 return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
@@ -49,6 +49,10 @@ return require("packer").startup(function()
 
 	-- Null ls
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+
+	-- Nvim-lsp-ts-utils, seems to be broken -> https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils/issues/112
+	-- try again when fixed
+	--use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
 
 	-- Comment.nvim
 	use({
@@ -99,5 +103,14 @@ return require("packer").startup(function()
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+
+	-- Tokyo night colorscheme
+	use("folke/tokyonight.nvim")
+
+	-- Todo comments
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
 	})
 end)
