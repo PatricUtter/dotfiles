@@ -14,6 +14,8 @@ vim.o.writebackup = false
 vim.o.updatetime = 300
 vim.o.clipboard = "unnamedplus"
 vim.cmd([[set signcolumn=yes]])
+vim.cmd([[set splitright]])
+vim.cmd([[set splitbelow]])
 
 -- Neede for nvim.cmp to work
 vim.cmd([[set completeopt=menu,menuone,noselect]])

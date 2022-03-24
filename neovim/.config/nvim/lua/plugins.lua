@@ -52,7 +52,7 @@ return require("packer").startup(function()
 
 	-- Nvim-lsp-ts-utils, seems to be broken -> https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils/issues/112
 	-- try again when fixed
-	--use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
+	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
 
 	-- Comment.nvim
 	use({
