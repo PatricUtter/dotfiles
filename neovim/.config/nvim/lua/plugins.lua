@@ -113,4 +113,7 @@ return require("packer").startup(function()
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
+
+	-- Fugitive
+	use("tpope/vim-fugitive")
 end)
