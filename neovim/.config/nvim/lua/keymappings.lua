@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader><leader><Tab>", "<cmd>NvimTreeFindFile<CR>")
 
 -- Hop
 vim.keymap.set("n", "s", require("hop").hint_char2)
+
+-- Fugutive
+vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>")
+vim.keymap.set("n", "<leader>gw", "<cmd>Git commit<CR>")
