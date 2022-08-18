@@ -10,7 +10,6 @@ vim.keymap.set("x", "<leader>y", '"+y')
 
 --fancy block mover
 vim.keymap.set("v", "K", ":move '<-2<CR>gv-gv")
-vim.keymap.set("v", "J", ":move '>+1<CR>gv-gv")
 
 -- Navigator keybindings
 vim.keymap.set("n", "<C-h>", require("Navigator").left)
@@ -25,7 +24,7 @@ vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers)
 vim.keymap.set("n", "<leader>h", require("telescope.builtin").help_tags)
 
 -- Formatting
-vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 -- Nvim-tree
 vim.keymap.set("n", "<leader><Tab>", "<cmd>NvimTreeToggle<CR>")

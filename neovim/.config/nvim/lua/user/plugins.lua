@@ -116,4 +116,10 @@ return require("packer").startup(function()
 
   -- Fugitive
   use("tpope/vim-fugitive")
+
+  -- DAP
+  use 'mfussenegger/nvim-dap'
+
+  -- Java support
+  use ("mfussenegger/nvim-jdtls")
 end)

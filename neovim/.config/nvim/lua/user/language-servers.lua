@@ -16,8 +16,10 @@ local function global_on_attach(_, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gf', '<cmd> lua vim.lsp.buf.references()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gf", "<cmd>Telescope lsp_references<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async: true })<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float: true })<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "[g", "<cmd>lua vim.diagnostic.open_float({ float: true })<CR>", opts)
 end
 
 local enhance_server_opts = {
@@ -107,14 +109,20 @@ local enhance_server_opts = {
 
 lsp_installer.on_server_ready(function(server)
 	-- Specify the default options which we'll use to setup all servers
-	local opts = {
-		on_attach = global_on_attach,
-	}
+  if server.name == "jdtls" then
+    -- we don't want to do anything here as java is handled by separate plugin
+    return
+  else
+    local opts = {
+      on_attach = global_on_attach,
+    }
 
-	if enhance_server_opts[server.name] then
-		-- Enhance the default opts with the server-specific ones
-		enhance_server_opts[server.name](opts)
-	end
+    if enhance_server_opts[server.name] then
+      -- Enhance the default opts with the server-specific ones
+      enhance_server_opts[server.name](opts)
+    end
 
-	server:setup(opts)
+    server:setup(opts)
+
+  end
 end)
