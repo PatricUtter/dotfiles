@@ -1,12 +1,21 @@
 vim.g.mapleader = " "
 
+-- General
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jk", "<Esc>")
-
 vim.keymap.set("x", "<leader>p", '"+p')
-
 vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("x", "<leader>y", '"+y')
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "*", "*zz")
+vim.keymap.set("n", "#", "#zz")
+vim.keymap.set("n", "g*", "g*zz")
+vim.keymap.set("n", "g#", "g#zz")
+
+-- Quickfix list
+vim.keymap.set("n", "<leader>n", ":cnext<cr>")
+vim.keymap.set("n", "<leader>N", ":cp<cr>")
 
 --fancy block mover
 vim.keymap.set("v", "K", ":move '<-2<CR>gv-gv")
@@ -39,3 +48,6 @@ vim.keymap.set("n", "<leader>gw", "<cmd>Git commit<CR>")
 
 -- Diagnostics
 vim.keymap.set("n", "g?", vim.diagnostic.open_float)
+
+-- Substitution
+vim.keymap.set("n", "<leader>s", ":%s/<c-r><c-w>/")

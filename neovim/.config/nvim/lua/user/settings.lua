@@ -28,9 +28,9 @@ for type, icon in pairs(signs) do
 end
 
 -- Colorscheme etc
-vim.g.gruvbox_material_background = "hard"
+--vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_better_performance = 1
- vim.cmd([[colorscheme gruvbox-material]])
+vim.cmd([[colorscheme gruvbox-material]])
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd([[colorscheme tokyonight]])
 
