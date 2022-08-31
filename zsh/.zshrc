@@ -104,8 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # Add scripts to Path
 export PATH="$PATH:$HOME/scripts"
 
-## run script for mapping ctrl key to caps
-fixcaps
+## run script for mapping ctrl key to caps (not a good place for this)
+##fixcaps
 
 ## Sripts path environment
 export SCRIPTS="$HOME/scripts"

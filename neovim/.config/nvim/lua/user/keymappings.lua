@@ -36,3 +36,6 @@ vim.keymap.set("n", "s", require("hop").hint_char2)
 -- Fugutive
 vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>")
 vim.keymap.set("n", "<leader>gw", "<cmd>Git commit<CR>")
+
+-- Diagnostics
+vim.keymap.set("n", "g?", vim.diagnostic.open_float)
