@@ -7,7 +7,9 @@ require("null-ls").setup({
     require("null-ls").builtins.formatting.eslint.with({
       filetypes = { "typescript" }
     }),
-    require("null-ls").builtins.formatting.stylua,
+    require("null-ls").builtins.formatting.stylua.with({
+      filetypes = { "lua" }
+    }),
     require("null-ls").builtins.code_actions.gitsigns,
   },
   on_attach = function(client, bufnr)

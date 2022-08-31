@@ -16,6 +16,8 @@ vim.o.clipboard = "unnamedplus"
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set splitright]])
 vim.cmd([[set splitbelow]])
+vim.cmd([[set ignorecase]])
+vim.cmd([[set smartcase]])
 
 -- Neede for nvim.cmp to work
 vim.cmd([[set completeopt=menu,menuone,noselect]])
@@ -23,8 +25,8 @@ vim.cmd([[set completeopt=menu,menuone,noselect]])
 -- Icons for diagnostigs
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- Colorscheme etc
