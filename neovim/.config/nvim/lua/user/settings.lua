@@ -36,6 +36,9 @@ vim.cmd([[colorscheme gruvbox-material]])
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd([[colorscheme tokyonight]])
 
+-- Highlight on yank
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
+
 -- Color adjustments, these need to run after other color settings have run
 vim.cmd([[hi SignColumn guibg=235]])
 vim.cmd([[hi GreenSign guibg=235]])
