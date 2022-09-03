@@ -100,7 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
+alias k="kubectl"
 # Add scripts to Path
 export PATH="$PATH:$HOME/scripts"
 
