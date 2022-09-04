@@ -4,11 +4,10 @@ local cmp = require("cmp")
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			require("user.luasnip").lsp_expand(args.body) -- For `luasnip` users.
+			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
 	mapping = {
-		["<C-Up>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-Down>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
@@ -27,6 +26,10 @@ cmp.setup({
 		{ name = "cmdline" },
 		{ name = "luasnip" }, -- For luasnip users.
 	}),
+	experimental = {
+		native_menu = false,
+		ghost_text = true,
+	},
 })
 
 -- Set configuration for specific filetype.
