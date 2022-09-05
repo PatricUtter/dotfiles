@@ -13,5 +13,5 @@ require("user.nvim-tree")
 require("user.lualine")
 require("user.todo-comments")
 require("user.db")
-
+require("user.custom-commands")
 require("user.keymappings")

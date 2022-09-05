@@ -111,6 +111,9 @@ export PATH="$PATH:$HOME/scripts"
 ## Sripts path environment
 export SCRIPTS="$HOME/scripts"
 
+## Nvim source file
+export NVIM_SOURCE_FILE="$HOME/dotfiles/neovim/.config/nvim/init.lua"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
