@@ -31,6 +31,7 @@ vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>F", require("telescope.builtin").live_grep)
 vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers)
 vim.keymap.set("n", "<leader>h", require("telescope.builtin").help_tags)
+vim.keymap.set("n", "<leader>*", require("telescope.builtin").grep_string)
 
 -- Formatting
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.format()<CR>")
