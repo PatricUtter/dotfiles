@@ -27,11 +27,22 @@ vim.keymap.set("n", "<C-l>", require("Navigator").right)
 vim.keymap.set("n", "<C-j>", require("Navigator").down)
 
 -- Telescope keybindings
-vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files)
-vim.keymap.set("n", "<leader>F", require("telescope.builtin").live_grep)
-vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers)
-vim.keymap.set("n", "<leader>h", require("telescope.builtin").help_tags)
-vim.keymap.set("n", "<leader>*", require("telescope.builtin").grep_string)
+local opts = { path_display = { "truncate" } }
+vim.keymap.set("n", "<C-p>", function()
+	require("telescope.builtin").find_files(opts)
+end)
+vim.keymap.set("n", "<leader>F", function()
+	require("telescope.builtin").live_grep(opts)
+end)
+vim.keymap.set("n", "<leader>b", function()
+	require("telescope.builtin").buffers(opts)
+end)
+vim.keymap.set("n", "<leader>h", function()
+	require("telescope.builtin").help_tags(opts)
+end)
+vim.keymap.set("n", "<leader>*", function()
+	require("telescope.builtin").grep_string(opts)
+end)
 
 -- Formatting
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.format()<CR>")

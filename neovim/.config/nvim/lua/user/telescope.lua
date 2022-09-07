@@ -9,6 +9,7 @@ require("telescope").setup({
 				["<C-j>"] = require("telescope.actions").move_selection_next,
 			},
 		},
+		display_path = { "tail" },
 	},
 	extensions = {
 		fzf = {

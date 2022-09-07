@@ -18,6 +18,7 @@ vim.cmd([[set splitright]])
 vim.cmd([[set splitbelow]])
 vim.cmd([[set ignorecase]])
 vim.cmd([[set smartcase]])
+vim.cmd([[set scrolloff=8]])
 
 -- Neede for nvim.cmp to work
 vim.cmd([[set completeopt=menu,menuone,noselect]])
