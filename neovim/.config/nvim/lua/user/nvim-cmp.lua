@@ -21,10 +21,10 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "buffer", max_item_count = 10 },
 		{ name = "path", max_item_count = 5 },
 		{ name = "cmdline" },
-		{ name = "luasnip" }, -- For luasnip users.
 	}),
 	experimental = {
 		native_menu = false,
@@ -58,11 +58,29 @@ cmp.setup.cmdline(":", {
 })
 
 -- Setup lspconfig.
+-- Not sure what I get out of this TBH
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require("lspconfig")["sumneko_lua"].setup({
 	capabilities = capabilities,
 })
 require("lspconfig")["tsserver"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["dockerls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["jsonls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["yamlls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["html"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["tailwindcss"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["marksman"].setup({
 	capabilities = capabilities,
 })
