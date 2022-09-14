@@ -54,6 +54,20 @@ require("nvim-tree").setup({
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
+		-- float = {
+		-- 	enable = true,
+		-- 	open_win_config = {
+		-- 		relative = "editor",
+		-- 		border = "solid",
+		-- 		width = 50,
+		-- 		height = 50,
+		-- 		row = 1,
+		-- 		col = 1,
+		-- 	},
+		-- },
+	},
+	renderer = {
+		full_name = true,
 	},
 	trash = {
 		cmd = "trash",
