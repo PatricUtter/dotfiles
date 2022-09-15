@@ -98,3 +98,6 @@ vim.keymap.set("n", "g?", vim.diagnostic.open_float)
 
 -- Substitution
 vim.keymap.set("n", "<leader>s", ":%s/<c-r><c-w>/")
+
+-- Clear hightlights
+vim.keymap.set("n", "<leader>l", ":nohl<cr>")
