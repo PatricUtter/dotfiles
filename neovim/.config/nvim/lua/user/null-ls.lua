@@ -11,6 +11,7 @@ require("null-ls").setup({
 			filetypes = { "lua" },
 		}),
 		require("null-ls").builtins.code_actions.gitsigns,
+		filetypes = { "typescript", "lua" },
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

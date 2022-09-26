@@ -18,13 +18,12 @@ cmp.setup({
 		}),
 		["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
+	-- Globally used sources
 	sources = cmp.config.sources({
-		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "buffer", max_item_count = 10 },
 		{ name = "path", max_item_count = 5 },
-		{ name = "cmdline" },
+		{ name = "cmdline", max_item_count = 5 },
 	}),
 	experimental = {
 		native_menu = false,
@@ -32,18 +31,20 @@ cmp.setup({
 	},
 })
 
--- Set configuration for specific filetype.
---cmp.setup.filetype('gitcommit', {
---  sources = cmp.config.sources({
---    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
---  }, {
---    { name = 'buffer' },
---  })
---})
+cmp.setup.filetype({ "lua" }, {
+	sources = cmp.config.sources({
+		{ name = "nvim_lua" },
+		{ name = "luasnip" }, -- For luasnip users.
+		{ name = "nvim_lsp" },
+		{ name = "buffer", max_item_count = 10 },
+		{ name = "path", max_item_count = 5 },
+		{ name = "cmdline", max_item_count = 5 },
+	}),
+})
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
 	sources = {
+		{ name = "path", max_item_count = 5 },
 		{ name = "buffer" },
 	},
 })

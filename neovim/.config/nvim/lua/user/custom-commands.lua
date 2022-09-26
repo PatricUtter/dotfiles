@@ -6,3 +6,10 @@ if sourceFile ~= nil then
 		vim.cmd("source " .. sourceFile)
 	end, {})
 end
+
+vim.api.nvim_create_user_command("CleanLog", function()
+	vim.cmd([[g!/{"/d]])
+	vim.cmd([[set ft=json]])
+	vim.cmd([[%s/\\n\\/\r/g]])
+	vim.cmd([[/error]])
+end, {})

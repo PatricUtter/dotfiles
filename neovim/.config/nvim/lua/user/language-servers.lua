@@ -23,14 +23,6 @@ local function global_on_attach(_, bufnr)
 end
 
 local enhance_server_opts = {
-	-- Provide settings that should only apply to the "eslintls" server
-	--["eslintls"] = function(opts)
-	--opts.settings = {
-	--format = {
-	--enable = true,
-	--},
-	--}
-	--end,
 	["sumneko_lua"] = function(opts)
 		opts.settings = {
 			Lua = {
