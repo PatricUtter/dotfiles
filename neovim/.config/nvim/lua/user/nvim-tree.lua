@@ -43,7 +43,6 @@ require("nvim-tree").setup({
 	},
 	view = {
 		width = 30,
-		height = 30,
 		hide_root_folder = false,
 		side = "left",
 		preserve_window_proportions = false,
@@ -54,17 +53,6 @@ require("nvim-tree").setup({
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
-		-- float = {
-		-- 	enable = true,
-		-- 	open_win_config = {
-		-- 		relative = "editor",
-		-- 		border = "solid",
-		-- 		width = 50,
-		-- 		height = 50,
-		-- 		row = 1,
-		-- 		col = 1,
-		-- 	},
-		-- },
 	},
 	renderer = {
 		full_name = true,
