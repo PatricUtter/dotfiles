@@ -3,9 +3,12 @@ vim.g.mapleader = " "
 -- General
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jk", "<Esc>")
+-- Todo look into why these don't behave as expected
 vim.keymap.set("x", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("x", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "*", "*zz")
@@ -95,6 +98,8 @@ vim.keymap.set("n", "<leader>gw", "<cmd>Git commit<CR>")
 
 -- Diagnostics
 vim.keymap.set("n", "g?", vim.diagnostic.open_float)
+vim.keymap.set("n", "g[", vim.diagnostic.goto_next)
+vim.keymap.set("n", "g]", vim.diagnostic.goto_prev)
 
 -- Substitution
 vim.keymap.set("n", "<leader>s", ":%s/<c-r><c-w>/")
