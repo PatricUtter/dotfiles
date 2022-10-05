@@ -8,7 +8,6 @@ vim.keymap.set("x", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("x", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "*", "*zz")
@@ -106,3 +105,8 @@ vim.keymap.set("n", "<leader>s", ":%s/<c-r><c-w>/")
 
 -- Clear hightlights
 vim.keymap.set("n", "<leader>l", ":nohl<cr>")
+
+-- Debugging
+vim.keymap.set("n", "<leader>dc", require("dap").continue)
+vim.keymap.set("n", "<leader>db", require("dap").toggle_breakpoint)
+vim.keymap.set("n", "<leader>du", require("dapui").toggle)

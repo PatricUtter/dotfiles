@@ -5,7 +5,7 @@
 require("null-ls").setup({
 	sources = {
 		require("null-ls").builtins.formatting.prettier.with({
-			filetypes = { "typescript" },
+			filetypes = { "typescript", "javascript", "html", "markdown" },
 		}),
 		require("null-ls").builtins.formatting.stylua.with({
 			filetypes = { "lua" },

@@ -27,12 +27,14 @@ return require("packer").startup(function()
 		end,
 	})
 
+	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
 
 	use("folke/lsp-colors.nvim")
 
@@ -43,6 +45,7 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-cmdline" })
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "rcarriga/cmp-dap" })
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" })
@@ -117,7 +120,14 @@ return require("packer").startup(function()
 
 	-- DAP
 	use("mfussenegger/nvim-dap")
-
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	-- DAP node
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npm run compile",
+	})
 	-- Java support
 	use("mfussenegger/nvim-jdtls")
 
@@ -125,6 +135,4 @@ return require("packer").startup(function()
 	use({ "tpope/vim-dadbod" })
 	use({ "kristijanhusak/vim-dadbod-ui" })
 	use({ "kristijanhusak/vim-dadbod-completion" })
-
-	use({ use("tversteeg/registers.nvim") })
 end)

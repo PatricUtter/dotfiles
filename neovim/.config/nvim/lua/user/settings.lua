@@ -13,6 +13,7 @@ vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
+vim.o.clipboard = "unnamedplus"
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set splitright]])
 vim.cmd([[set splitbelow]])
