@@ -96,25 +96,21 @@ local config = {
 		require("jdtls").setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
 	end,
-
-	-- Language server `initializationOptions`
-	-- You need to extend the `bundles` with paths to jar files
-	-- if you want to use additional eclipse.jdt.ls plugins.
-	--
-	-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-	--
-	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-	--init_options = {},
 }
 
 local bundles = {
 	vim.fn.glob(
-		"/home/utter/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+		home .. "/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
 	),
 }
 
-vim.list_extend(bundles, vim.split(vim.fn.glob("/home/utter/java/vscode-java-test/server/*.jar"), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/java/vscode-java-test/server/*.jar"), "\n"))
 
+-- Language server `initializationOptions`
+-- You need to extend the `bundles` with paths to jar files
+-- if you want to use additional eclipse.jdt.ls plugins.
+--
+-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
 config["init_options"] = {
 	bundles = bundles,
 }

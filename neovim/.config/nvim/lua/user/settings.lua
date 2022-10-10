@@ -33,9 +33,9 @@ end
 -- Colorscheme etc
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_better_performance = 1
-vim.cmd([[colorscheme gruvbox-material]])
--- vim.g.tokyonight_style = "moon"
--- vim.cmd([[colorscheme tokyonight]])
+--vim.cmd([[colorscheme gruvbox-material]])
+vim.g.tokyonight_style = "storm"
+vim.cmd([[colorscheme tokyonight]])
 
 -- Highlight on yank
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({ timeout = 100 })]])

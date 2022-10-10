@@ -23,7 +23,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "buffer", max_item_count = 10 },
 		{ name = "path", max_item_count = 5 },
-		{ name = "cmdline", max_item_count = 5 },
 	}),
 	experimental = {
 		native_menu = false,
@@ -38,18 +37,17 @@ cmp.setup.filetype({ "lua" }, {
 		{ name = "nvim_lsp" },
 		{ name = "buffer", max_item_count = 10 },
 		{ name = "path", max_item_count = 5 },
-		{ name = "cmdline", max_item_count = 5 },
 	}),
 })
 
-cmp.setup.cmdline("/", {
-	sources = {
-		{ name = "path", max_item_count = 5 },
-		{ name = "buffer" },
-	},
-})
+ cmp.setup.cmdline("/", {
+ 	sources = {
+ 		{ name = "path", max_item_count = 5 },
+ 		{ name = "buffer" },
+ 	},
+ })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+ --Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
 		{ name = "path" },
