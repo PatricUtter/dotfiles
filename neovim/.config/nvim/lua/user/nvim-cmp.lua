@@ -40,14 +40,14 @@ cmp.setup.filetype({ "lua" }, {
 	}),
 })
 
- cmp.setup.cmdline("/", {
- 	sources = {
- 		{ name = "path", max_item_count = 5 },
- 		{ name = "buffer" },
- 	},
- })
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "path", max_item_count = 5 },
+		{ name = "buffer" },
+	},
+})
 
- --Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+--Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
 		{ name = "path" },
@@ -70,7 +70,7 @@ cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
 
 -- Setup lspconfig.
 -- Not sure what I get out of this TBH
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 require("lspconfig")["sumneko_lua"].setup({
 	capabilities = capabilities,
 })
