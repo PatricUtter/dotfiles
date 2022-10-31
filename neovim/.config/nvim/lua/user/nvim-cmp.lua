@@ -40,6 +40,10 @@ cmp.setup.filetype({ "lua" }, {
 	}),
 })
 
+cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
+	{ name = "vim-dadbod-completion" },
+})
+
 cmp.setup.cmdline("/", {
 	sources = {
 		{ name = "path", max_item_count = 5 },

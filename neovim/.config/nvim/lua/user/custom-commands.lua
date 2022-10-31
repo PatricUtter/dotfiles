@@ -2,7 +2,7 @@ local sourceFile = os.getenv("NVIM_SOURCE_FILE")
 
 if sourceFile ~= nil then
 	vim.api.nvim_create_user_command("SourceMe", function()
-		vim.cmd("source " .. sourceFile)
+		vim.cmd("luafile " .. sourceFile)
 		print("Config sourced")
 	end, {})
 end

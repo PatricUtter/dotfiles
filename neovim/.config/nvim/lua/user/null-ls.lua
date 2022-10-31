@@ -7,9 +7,10 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.prettier.with({
 			filetypes = { "typescript", "javascript", "html", "markdown" },
 		}),
-		require("null-ls").builtins.diagnostics.eslint.with({
-			filetypes = { "typescript", "javascript" },
-		}),
+		--Works but is a bit slow and
+		-- require("null-ls").builtins.diagnostics.eslint.with({
+		-- 	filetypes = { "typescript", "javascript" },
+		-- }),
 		require("null-ls").builtins.formatting.stylua.with({
 			filetypes = { "lua" },
 		}),

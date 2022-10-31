@@ -63,6 +63,9 @@ return require("packer").startup(function()
 		end,
 	})
 
+	-- Session handling
+	use({ "tpope/vim-obsession" })
+
 	-- vim-surround
 	use({ "tpope/vim-surround" })
 
@@ -135,4 +138,7 @@ return require("packer").startup(function()
 	use({ "tpope/vim-dadbod" })
 	use({ "kristijanhusak/vim-dadbod-ui" })
 	use({ "kristijanhusak/vim-dadbod-completion" })
+
+	-- Markdown
+	use({ "iamcco/markdown-preview.nvim" })
 end)

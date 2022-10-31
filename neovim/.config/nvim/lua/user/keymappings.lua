@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 -- General
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("v", "ii", "<Esc>")
+vim.keymap.set("v", "ii", "<Esc>")
 -- Todo look into why these don't behave as expected
 vim.keymap.set("x", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>p", '"+p')
