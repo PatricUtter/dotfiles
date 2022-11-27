@@ -9,8 +9,9 @@ return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-		"williamboman/nvim-lsp-installer",
 	})
 
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -52,8 +53,10 @@ return require("packer").startup(function()
 
 	-- Null ls
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "jose-elias-alvarez/typescript.nvim" })
 
-	use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
+	-- todo remove
+	--use({ "jose-elias-alvarez/nvim-lsp-ts-utils" })
 
 	-- Comment.nvim
 	use({
