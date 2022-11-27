@@ -17,8 +17,8 @@ require("null-ls").setup({
 		}),
 		require("null-ls").builtins.formatting.sqlfluff.with({
 			filetypes = { "sql" },
-      -- TODO add custome config file for what rules to apply
-			extra_args = { "--dialect", "postgres", "--rules", "L010" }, -- change to your dialect
+			-- TODO add custome config file for what rules to apply
+			extra_args = { "--dialect", "postgres" }, -- change to your dialect
 		}),
 		require("null-ls").builtins.formatting.stylua.with({
 			filetypes = { "lua" },
