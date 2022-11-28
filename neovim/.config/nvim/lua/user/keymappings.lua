@@ -104,6 +104,7 @@ vim.keymap.set("n", "g]", vim.diagnostic.goto_prev)
 
 -- Substitution
 vim.keymap.set("n", "<leader>s", ":%s/<c-r><c-w>/")
+vim.keymap.set("n", "<leader>sl", "yiwV:s/<c-r>0/")
 
 -- Clear hightlights
 vim.keymap.set("n", "<leader>l", ":nohl<cr>")
