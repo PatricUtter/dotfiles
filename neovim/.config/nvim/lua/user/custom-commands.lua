@@ -14,3 +14,8 @@ vim.api.nvim_create_user_command("CleanLog", function()
 	vim.cmd([[/error]])
 	print("Logs are clean")
 end, {})
+
+vim.api.nvim_create_user_command("ReplaceNewLines", function()
+	vim.cmd([[%s/\\n\\/\r/g]])
+	print("Newlines are now new lines")
+end, {})
