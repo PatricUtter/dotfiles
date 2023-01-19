@@ -108,11 +108,15 @@ local config = {
 
 local bundles = {
 	vim.fn.glob(
-		home .. "/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+		home
+			.. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
 	),
 }
 
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/java/vscode-java-test/server/*.jar"), "\n"))
+vim.list_extend(
+	bundles,
+	vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-test//extension/server/*.jar"), "\n")
+)
 
 -- Language server `initializationOptions`
 -- You need to extend the `bundles` with paths to jar files
