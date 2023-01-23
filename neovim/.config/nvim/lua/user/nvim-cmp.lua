@@ -50,9 +50,6 @@ cmp.setup.filetype({ "ts" }, {
 	}),
 })
 
-cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
-	{ name = "vim-dadbod-completion" },
-})
 
 cmp.setup.cmdline("/", {
 	sources = {
