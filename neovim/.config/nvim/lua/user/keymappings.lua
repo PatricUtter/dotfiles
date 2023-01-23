@@ -16,6 +16,9 @@ vim.keymap.set("n", "*", "*zz")
 vim.keymap.set("n", "#", "#zz")
 vim.keymap.set("n", "g*", "g*zz")
 vim.keymap.set("n", "g#", "g#zz")
+vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>O")
+vim.keymap.set("i", "[<CR>", "[<CR>]<Esc>O")
+vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>O")
 
 -- Quickfix list
 vim.keymap.set("n", "<leader>n", ":cnext<cr>")
