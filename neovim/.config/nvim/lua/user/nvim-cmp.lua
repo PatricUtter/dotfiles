@@ -82,7 +82,7 @@ cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
 -- Setup lspconfig.
 -- Not sure what I get out of this TBH
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-require("lspconfig")["sumneko_lua"].setup({
+require("lspconfig")["lua_ls"].setup({
 	capabilities = capabilities,
 })
 require("lspconfig")["dockerls"].setup({
