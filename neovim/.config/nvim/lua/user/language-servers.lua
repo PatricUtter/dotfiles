@@ -24,44 +24,45 @@ local function global_on_attach(_, bufnr)
 end
 
 require("mason-lspconfig").setup_handlers({
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function(server_name) -- default handler (optional)
-      require("lspconfig")[server_name].setup({
-          on_attach = global_on_attach,
-      })
-    end,
-    -- Next, you can provide a dedicated handler for specific servers.
-    -- For example, a handler override for the `rust_analyzer`:
-    ["tsserver"] = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- The first entry (without a key) will be the default handler
+  -- and will be called for each installed server that doesn't have
+  -- a dedicated handler.
+  function(server_name) -- default handler (optional)
+    require("lspconfig")[server_name].setup({
+      on_attach = global_on_attach,
+    })
+  end,
+  -- Next, you can provide a dedicated handler for specific servers.
+  -- For example, a handler override for the `rust_analyzer`:
+      ["tsserver"] = function()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      require("typescript").setup({
-          disable_commands = false, -- prevent the plugin from creating Vim commands
-          debug = false, -- enable debug logging for commands
-          go_to_source_definition = {
-              fallback = true, -- fall back to standard LSP definition on failure
+    require("typescript").setup({
+      disable_commands = false, -- prevent the plugin from creating Vim commands
+      debug = false,         -- enable debug logging for commands
+      go_to_source_definition = {
+        fallback = true,     -- fall back to standard LSP definition on failure
+      },
+      server = {
+                             -- pass options to lspconfig's setup method
+        capabilities = capabilities,
+        on_attach = global_on_attach,
+      },
+    })
+  end,
+      ["lua_ls"] = function()
+    require("lspconfig")["lua_ls"].setup({
+      on_attach = global_on_attach,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim", "use" },
           },
-          server = { -- pass options to lspconfig's setup method
-              capabilities = capabilities,
-              on_attach = global_on_attach,
-          },
-      })
-    end,
-    ["lua_ls"] = function()
-      require("lspconfig")["lua_ls"].setup({
-          on_attach = global_on_attach,
-          settings = {
-              Lua = {
-                  diagnostics = {
-                      globals = { "vim", "use" },
-                  },
-              },
-          },
-      })
-    end,
-    ["jdtls"] = function()
-      --do nothing here since it's handled in separate file
-    end,
+        },
+      },
+    })
+  end,
+      ["jdtls"] = function()
+    --do nothing here since it's handled in separate file
+  end,
 })
