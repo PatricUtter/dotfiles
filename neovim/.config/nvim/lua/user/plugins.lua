@@ -143,4 +143,7 @@ return require("packer").startup(function()
 
   -- Markdown
   use({ "iamcco/markdown-preview.nvim" })
+
+  -- Undotree
+  use({ "mbbill/undotree" }) -- check if it makes sense to move to a lua verion
 end)

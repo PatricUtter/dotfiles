@@ -132,3 +132,6 @@ end)
 vim.keymap.set("n", "g;", function()
   require("harpoon.ui").nav_file(4)
 end)
+
+-- UndoTre
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
