@@ -34,24 +34,24 @@ require("mason-lspconfig").setup_handlers({
   end,
   -- Next, you can provide a dedicated handler for specific servers.
   -- For example, a handler override for the `rust_analyzer`:
-      ["tsserver"] = function()
+  ["tsserver"] = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
     require("typescript").setup({
       disable_commands = false, -- prevent the plugin from creating Vim commands
-      debug = false,         -- enable debug logging for commands
+      debug = false,            -- enable debug logging for commands
       go_to_source_definition = {
-        fallback = true,     -- fall back to standard LSP definition on failure
+        fallback = true,        -- fall back to standard LSP definition on failure
       },
       server = {
-                             -- pass options to lspconfig's setup method
+        -- pass options to lspconfig's setup method
         capabilities = capabilities,
         on_attach = global_on_attach,
       },
     })
   end,
-      ["lua_ls"] = function()
-    require("lspconfig")["lua_ls"].setup({
+  ["lua_ls"] = function()
+    require 'lspconfig'.lua_ls.setup({
       on_attach = global_on_attach,
       settings = {
         Lua = {
@@ -62,7 +62,7 @@ require("mason-lspconfig").setup_handlers({
       },
     })
   end,
-      ["jdtls"] = function()
+  ["jdtls"] = function()
     --do nothing here since it's handled in separate file
   end,
 })
