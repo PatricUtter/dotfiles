@@ -11,7 +11,7 @@ require("telescope").setup({
           require("telescope.actions").send_selected_to_qflist(buf)
           require("telescope.actions").open_qflist(buf)
         end,
-        ["<C-m>"] = function(buf)
+        ["<C-f>"] = function(buf)
           require("telescope.actions").select_all(buf)
           require("telescope.actions").send_selected_to_qflist(buf)
           require("telescope.actions").open_qflist(buf)
