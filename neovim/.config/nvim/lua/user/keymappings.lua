@@ -52,7 +52,11 @@ vim.keymap.set("n", "<leader>*", function()
   require("telescope.builtin").grep_string(opts)
 end)
 
-vim.keymap.set("n", '<leader>"', "<cmd>Telescope registers<CR>")
+--vim.keymap.set("n", '<leader>"', "<cmd>Telescope registers<CR>")
+--
+vim.keymap.set("n", '<leader>"', function()
+  require("telescope.builtin").registers(opts)
+end)
 
 -- Formatting
 vim.keymap.set("n", "<leader>,", "<cmd>lua vim.lsp.buf.format()<CR>")
