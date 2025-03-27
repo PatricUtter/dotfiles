@@ -174,5 +174,20 @@ vim.keymap.set("n", "g;", function()
 	harpoon:list():select(4)
 end)
 
+harpoon:extend({
+	UI_CREATE = function(cx)
+		vim.keymap.set("n", "<C-v>", function()
+			harpoon.ui:select_menu_item({ vsplit = true })
+		end, { buffer = cx.bufnr })
+
+		vim.keymap.set("n", "<C-x>", function()
+			harpoon.ui:select_menu_item({ split = true })
+		end, { buffer = cx.bufnr })
+
+		vim.keymap.set("n", "<C-t>", function()
+			harpoon.ui:select_menu_item({ tabedit = true })
+		end, { buffer = cx.bufnr })
+	end,
+})
 -- UndoTree
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")

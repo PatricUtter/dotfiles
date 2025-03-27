@@ -37,7 +37,7 @@ require("mason-lspconfig").setup_handlers({
 	end,
 	-- Next, you can provide a dedicated handler for specific servers.
 	-- For example, a handler override for the `rust_analyzer`:
-	["tsserver"] = function()
+	["ts_ls"] = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 		require("typescript").setup({
@@ -66,12 +66,34 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 	["jdtls"] = function()
-		-- java indentation
-		vim.cmd("set ts=4")
-		vim.cmd("set sw=4")
-
 		require("lspconfig").jdtls.setup({
 			on_attach = global_on_attach,
+			settings = {
+				java = {
+					--"/home/utter/df-commons/**/*.java"
+					-- {
+					--     "java.project.referencedLibraries": [
+					--         "lib/**/*.jar",
+					--         "c:\\path\\to\\jarfile\\commons-logging-1.1.1.jar"
+					--     ]
+					-- }
+					-- }
+					project = {
+						referencedLibraries = {
+							"/home/utter/df-commons/build/libs/df-commons.jar",
+						},
+					},
+					configuration = {
+						runtimes = {
+							{
+								name = "JavaSE-21",
+								path = "/home/utter/.sdkman/candidates/java/current/bin/java",
+								default = true,
+							},
+						},
+					},
+				},
+			},
 		})
 	end,
 })

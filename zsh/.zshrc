@@ -71,7 +71,7 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,7 +113,7 @@ export SCRIPTS="$HOME/scripts"
 
 ## Nvim source file
 export NVIM_SOURCE_FILE="$HOME/dotfiles/neovim/.config/nvim/init.lua"
-
+bindkey -M viins 'kj' vi-cmd-mode
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -135,3 +135,22 @@ if [ -f '/home/utter/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/u
 if [ -f '/home/utter/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/utter/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Edit command line in vim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# Custom project switcher
+function switcher {
+  switch-project
+}
+zle -N switcher
+bindkey '^p' switcher
+
+# bun completions
+[ -s "/home/utter/.oh-my-zsh/completions/_bun" ] && source "/home/utter/.oh-my-zsh/completions/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

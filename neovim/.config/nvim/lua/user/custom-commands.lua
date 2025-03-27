@@ -33,3 +33,11 @@ vim.api.nvim_create_user_command("NewMFComp", function()
 	vim.cmd([[:r ~/Templates/mfcomp]])
 	vim.cmd([[:normal 4jfNciw]])
 end, {})
+
+-- tsc error to quickfix
+--
+vim.cmd([[
+  augroup TSCERRORQUICKFIX
+    autocmd FileType typescript,typescriptreact set makeprg=./node_modules/.bin/tsc\ \\\|\ sed\ 's/(\\(.*\\),\\(.*\\)):/:\\1:\\2:/'
+  augroup END
+]])

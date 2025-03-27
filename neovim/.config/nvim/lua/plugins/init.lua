@@ -58,14 +58,14 @@ return {
 			"kyazdani42/nvim-web-devicons",
 		},
 	},
-    -- Oil.nvim
-    {
-  'stevearc/oil.nvim',
-  opts = {},
-  -- Optional dependencies
-  --dependencies = { { "echasnovski/mini.icons", opts = {} } },
-   dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
- },
+	-- Oil.nvim
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		--dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+	},
 
 	{
 		"phaazon/hop.nvim",
@@ -100,9 +100,9 @@ return {
 	-- DAP node
 	{ "mxsdev/nvim-dap-vscode-js", lazy = true, requires = { "mfussenegger/nvim-dap" } },
 	-- Database
-	{ "tpope/vim-dadbod", lazy = true },
-	{ "kristijanhusak/vim-dadbod-ui", lazy = true },
-	{ "kristijanhusak/vim-dadbod-completion", lazy = true },
+	{ "tpope/vim-dadbod" },
+	{ "kristijanhusak/vim-dadbod-ui" },
+	{ "kristijanhusak/vim-dadbod-completion" },
 
 	-- Markdown
 	{ "iamcco/markdown-preview.nvim", lazy = true },

@@ -1,4 +1,10 @@
 require("harpoon"):setup(
+	-- harpoon 2
+	{
+		settings = {
+			save_on_toggle = true,
+		},
+	}
 	-- harpoon 1 setup
 	-- {
 	--   global_settings = {

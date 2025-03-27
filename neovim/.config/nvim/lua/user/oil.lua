@@ -64,6 +64,7 @@ require("oil").setup({
 		["<C-p>"] = "actions.preview",
 		["<C-c>"] = "actions.close",
 		["<C-l>"] = false,
+		["<C-h>"] = false,
 		["-"] = "actions.parent",
 		["_"] = "actions.open_cwd",
 		["`"] = "actions.cd",
