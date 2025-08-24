@@ -1,6 +1,3 @@
--- Telescope
-require("telescope").load_extension("fzf")
-
 require("telescope").setup({
   defaults = {
     mappings = {
@@ -33,4 +30,8 @@ require("telescope").setup({
   },
 })
 
-require("telescope").load_extension("ui-select")
+-- load fzf sorting alg
+require("telescope").load_extension("fzf")
+
+--require("telescope").load_extension("ui-select")
+
