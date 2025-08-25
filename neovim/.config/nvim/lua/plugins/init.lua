@@ -12,7 +12,9 @@ return {
 
   {
     "mason-org/mason.nvim",
-    opts = {}
+    opts = {
+
+    }
   },
   {
     'saghen/blink.cmp',
@@ -37,6 +39,12 @@ return {
   },
   {
    "tpope/vim-fugitive"
-  }
+  },
+	{
+		"ThePrimeagen/harpoon",
+		lazy = true,
+		branch = "harpoon2",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
 
 }
