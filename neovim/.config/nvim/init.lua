@@ -18,4 +18,6 @@ require('setup.telescope')
 require('setup.blink')
 require('setup.treesitter')
 require('setup.harpoon')
+require('setup.lualine')
+require('setup.todo-comments')
 

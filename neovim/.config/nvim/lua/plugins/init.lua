@@ -38,13 +38,47 @@ return {
     opts = {},
   },
   {
-   "tpope/vim-fugitive"
+    "tpope/vim-fugitive"
   },
-	{
-		"ThePrimeagen/harpoon",
-		lazy = true,
-		branch = "harpoon2",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-	},
+  {
+    "ThePrimeagen/harpoon",
+    lazy = true,
+    branch = "harpoon2",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+  },
+  { "tpope/vim-dadbod" },
+  { "kristijanhusak/vim-dadbod-ui" },
+  {
+    "kristijanhusak/vim-dadbod-completion",
+    ft = { 'sql', 'mysql', 'plsql' },
+    cmd = {
+      'DBUI',
+      'DBUIToggle',
+      'DBUIAddConnection',
+      'DBUIFindBuffer',
+    },
+    init = function()
+      vim.g.db_ui_use_nerd_fonts = 1
+      vim.g.db_ui_save_location = "~/.config/db_ui"
+      vim.g.db_ui_execute_on_save = 0
+      vim.g.db_ui_show_database_icon = 1
+    end,
+  },
+  { "mbbill/undotree" },
+  {
+    'smoka7/hop.nvim',
+    version = "*",
+    opts = {
+      keys = 'etovxqpdygfblzhckisuran'
+    }
+  }
 
 }
