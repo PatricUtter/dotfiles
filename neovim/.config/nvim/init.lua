@@ -20,4 +20,5 @@ require('setup.treesitter')
 require('setup.harpoon')
 require('setup.lualine')
 require('setup.todo-comments')
+require('setup.lint')
 

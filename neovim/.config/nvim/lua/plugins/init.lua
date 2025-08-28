@@ -79,6 +79,12 @@ return {
     opts = {
       keys = 'etovxqpdygfblzhckisuran'
     }
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+  {
+    'mfussenegger/nvim-lint',
   }
-
 }
